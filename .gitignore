@@ -167,3 +167,14 @@ pip-log.txt
 packages
 .project
 pubspec.lock
+
+.project
+*.iml
+*.ipr
+*.iws
+.idea/
+*.dart.js
+*.js_
+*.js.deps
+
+web/out/
