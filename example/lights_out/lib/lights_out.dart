@@ -1,6 +1,7 @@
 library lights_out;
 
-import 'package:one_hour_game_jam/model.dart';
+//import 'package:one_hour_game_jam/model.dart';
+import '../../../lib/model.dart';
 
 /// A cell that keeps track of whether it is lit or not.
 class LightCell extends Cell {
@@ -13,5 +14,9 @@ class LightCell extends Cell {
   bool flip() {
     lit = !lit;
     return !lit;
+  }
+  
+  String toString() {
+    return lit ? '+' : '-';
   }
 }

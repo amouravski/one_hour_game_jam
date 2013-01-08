@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>app</title>
+    <link rel="stylesheet" href="lights_out.css">
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+      <h2>Lights Out</h2>
+      <template iterate="col in lightGrid">
+        <div class="row-fluid show-grid">
+          <template iterate="cell in col">
+            <template instantiate="if cell.toString() == '+'">
+              <div class="span1 cell lit" on-click="handleClick($event)"></div>
+            </template>
+            <template instantiate="if cell.toString() == '-'">
+              <div class="span1 cell unlit" on-click="handleClick($event)"></div>
+            </template>
+          </template>
+        </div>
+      </template>
+    </div>
+
+    <script type="application/dart" src="lights_out.dart"></script>
+    <script type="text/javascript" src="https://dart.googlecode.com/svn/branches/bleeding_edge/dart/client/dart.js"></script>
+  </body>
+</html>

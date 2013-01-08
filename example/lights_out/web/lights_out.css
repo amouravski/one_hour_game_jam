@@ -1,0 +1,22 @@
+.cell {
+  background-color: #eee;
+  text-align: center;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  min-height: 40px;
+  line-height: 40px;
+}
+
+.show-grid {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.lit {
+  background-color: #FFCC33;
+}
+
+.unlit {
+  background-color: #000;
+}

@@ -1,17 +1,90 @@
 library model;
 
 /// The grid that will display the game.
-class Grid {
+class Grid extends Collection{
   final List<List<Cell>> _model;
-  final int width;
-  final int height;
+  int _width;
+  int _height;
+  
+  int get width => _width;
+  int get height => _height;
+  
+  /// Returns the number of cells, which is [height] * [width].
+  int get length {
+    return width * height; 
+  }
+  
+  /// Not yet implemented.
+  Grid map(Function cell) {
+  }
+  
+  /// Not yet implemented.
+  Grid filter(Function cell) {
+  }
+  
+  /// Iterates over elements in the grid row by row starting with `[0][0]`,
+  /// then `[0][1]`, etc.
+  Iterator iterator() => _model.iterator();//new GridIterator(this);
   
   /// Creates a new grid of width [x], and height [y].
-  Grid(width, this.height)
+  // TODO(amouravski): Make this make sense.
+  Grid(width, this._height)
       : _model = new List<List<Cell>>(width),
-        this.width = width {
+        _width = width {
     for (List<Cell> x in _model) {
       x = new List<Cell>(this.height);
+    }
+  }
+  
+  /// Creates an empty grid.
+  Grid.empty()
+      :_model = new List(),
+      _width = 0,
+      _height = 0;
+  
+  /**
+   *  Adds a single column to the grid.
+   *  
+   *  Returns the y value of this new col.
+   */
+  int addRow(List<Cell> row) {
+    if (row.length == 0) {
+      throw new ExpectException('Cannot add a 0 length column.');
+    } else if (length == 0) {
+      _model.add(row);
+      _height = row.length;
+      _width = 1;
+      return 0;
+    } else if (row.length != height) {
+      throw new ExpectException('New column length must be {height}');
+    } else {
+      _model.add(row);
+      return _width++;
+    }
+  }
+  
+  /**
+   *  Adds a single row to the grid.
+   *  
+   *  Returns the x value of this new col.
+   */
+  int addCol(List<Cell> col) {
+    if (col.length == 0) {
+      throw new ExpectException('Cannot add a 0 length row.');
+    } else if (length == 0) {
+      for (Cell cell in col) {
+        _model.add(new List()..add(cell));
+      }
+      _height = 1;
+      _width = col.length;
+      return 0;
+    } else if (col.length != width) {
+      throw new ExpectException('New row length must be {width}');
+    } else {
+      for (int i = 0; i < width; i++){
+        _model[i].add(col[i]);
+      }
+      return _height++;
     }
   }
   
@@ -60,6 +133,19 @@ class Grid {
   List<Cell> neighborsAsList(Cell cell, {bool diagonal: false}) {
     return neighbors(cell, diagonal: diagonal).values;
   }
+}
+
+/// Iterates over elements in the grid row by row starting with `[0][0]`, then
+/// `[0][1]`, etc.
+class GridIterator extends Iterator {
+  final Grid grid;
+  int _count = 0;
+  
+  GridIterator(this.grid);
+  
+  bool get hasNext => _count < grid.length;
+  
+  Cell next() => (grid[_count % grid.width][_count ~/ grid.width]);
 }
 
 /// One item in the grid.
