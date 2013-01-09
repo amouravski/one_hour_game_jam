@@ -22,9 +22,12 @@ class Grid extends Collection{
   Grid filter(Function cell) {
   }
   
+  /// Iterates over columns in the model.
+  Iterator iterator() => new GridRowIterator(this);
+  
   /// Iterates over elements in the grid row by row starting with `[0][0]`,
   /// then `[0][1]`, etc.
-  Iterator iterator() => _model.iterator();//new GridIterator(this);
+  Iterator gridIterator() => new GridIterator(this);
   
   /// Creates a new grid of width [x], and height [y].
   // TODO(amouravski): Make this make sense.
@@ -47,18 +50,18 @@ class Grid extends Collection{
    *  
    *  Returns the y value of this new col.
    */
-  int addRow(List<Cell> row) {
-    if (row.length == 0) {
+  int addColumn(List<Cell> column) {
+    if (column.length == 0) {
       throw new ExpectException('Cannot add a 0 length column.');
     } else if (length == 0) {
-      _model.add(row);
-      _height = row.length;
+      _model.add(column);
+      _height = column.length;
       _width = 1;
       return 0;
-    } else if (row.length != height) {
+    } else if (column.length != height) {
       throw new ExpectException('New column length must be {height}');
     } else {
-      _model.add(row);
+      _model.add(column);
       return _width++;
     }
   }
@@ -68,21 +71,21 @@ class Grid extends Collection{
    *  
    *  Returns the x value of this new col.
    */
-  int addCol(List<Cell> col) {
-    if (col.length == 0) {
+  int addRow(List<Cell> row) {
+    if (row.length == 0) {
       throw new ExpectException('Cannot add a 0 length row.');
     } else if (length == 0) {
-      for (Cell cell in col) {
+      for (Cell cell in row) {
         _model.add(new List()..add(cell));
       }
       _height = 1;
-      _width = col.length;
+      _width = row.length;
       return 0;
-    } else if (col.length != width) {
+    } else if (row.length != width) {
       throw new ExpectException('New row length must be {width}');
     } else {
       for (int i = 0; i < width; i++){
-        _model[i].add(col[i]);
+        _model[i].add(row[i]);
       }
       return _height++;
     }
@@ -97,6 +100,7 @@ class Grid extends Collection{
    *     Cell myCell = myGrid[5][10];
    */
   List<Cell> operator[](int x) {
+    print(_model[x]);
     return _model[x];
   }
 
@@ -115,9 +119,9 @@ class Grid extends Collection{
    */
   Map<Point, Cell> neighbors(Cell cell, {bool diagonal: false}) {
     var out = new Map<Point, Cell>();
-    
-    for (int x = cell.x - 1; x < cell.x + 1; x++) {
-      for (int y = cell.y - 1; y < cell.y + 1; y++) {
+    for (int x = cell.x - 1; x <= cell.x + 1; x++) {
+      for (int y = cell.y - 1; y <= cell.y + 1; y++) {
+        print('Test ($x, $y): ${_isCellValid(x,y)}');
         if (diagonal == false && x == y) {
           continue;
         } else if (_isCellValid(x, y)) {
@@ -126,6 +130,7 @@ class Grid extends Collection{
       }
     }
     
+    print("Foo: $out");
     return out;
   }
   
@@ -133,6 +138,30 @@ class Grid extends Collection{
   List<Cell> neighborsAsList(Cell cell, {bool diagonal: false}) {
     return neighbors(cell, diagonal: diagonal).values;
   }
+  
+  List<Cell> row(int r) {
+    var out = [];
+    for (int i = 0; i < width; i++) {
+      out.add(this[r][i]);
+    }
+  }
+}
+
+/// Iterates over the rows instead of the columns.
+class GridRowIterator extends Iterator {
+  final Grid grid;
+  int _row = 0;
+  
+  GridRowIterator(this.grid);
+  
+  bool get hasNext => _row < grid.height;
+  
+  /// Iterates row by row.
+  List<Cell> next() {
+    print("Foo ${grid.row}");
+    return grid.row(_row++);
+  }
+  
 }
 
 /// Iterates over elements in the grid row by row starting with `[0][0]`, then

@@ -17,6 +17,6 @@ class LightCell extends Cell {
   }
   
   String toString() {
-    return lit ? '+' : '-';
+    return '($x, $y) ${lit ? "+" : "-"}';
   }
 }

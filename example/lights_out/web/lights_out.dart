@@ -7,7 +7,7 @@ Grid lightGrid;
 main() {
 
   var myGame = ['101',
-                '000',
+                '001',
                 '111'];
   lightGrid = _createLightGrid(myGame);
 }
@@ -16,10 +16,10 @@ main() {
  * Creates a simple light grid given a list of strings encoding the rows.
  * 
  * For example:
- *     [101, 000, 111]
+ *     [101, 001, 111]
  * creates a grid like:
  *     1 0 1
- *     0 0 0
+ *     0 0 1
  *     1 1 1
  */    
 Grid _createLightGrid(List<String> grid) {
@@ -39,6 +39,13 @@ Grid _createLightGrid(List<String> grid) {
   return out;
 }
 
-handleClick(Event e) {
-  print(e.target);
+lightClick(LightCell cell, Grid grid) {
+  print('Clicked $cell');
+  var neighbors = grid.neighborsAsList(cell);
+  cell.flip();
+  
+  for (LightCell n in neighbors) {
+    print('Neighbor $n');
+    n.flip();
+  }
 }

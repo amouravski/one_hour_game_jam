@@ -10,15 +10,10 @@
   <body>
     <div class="container">
       <h2>Lights Out</h2>
-      <template iterate="col in lightGrid">
-        <div class="row-fluid show-grid">
-          <template iterate="cell in col">
-            <template instantiate="if cell.toString() == '+'">
-              <div class="span1 cell lit" on-click="handleClick($event)"></div>
-            </template>
-            <template instantiate="if cell.toString() == '-'">
-              <div class="span1 cell unlit" on-click="handleClick($event)"></div>
-            </template>
+      <template iterate="row in lightGrid">
+        <div class="row show-grid">
+          <template iterate="cell in row">
+            <div class="span1 cell {{cell.lit ? 'lit' : 'unlit'}}" on-click="lightClick(cell, lightGrid)"></div>
           </template>
         </div>
       </template>
