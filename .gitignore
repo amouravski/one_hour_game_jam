@@ -177,4 +177,6 @@ pubspec.lock
 *.js_
 *.js.deps
 
-web/out/
+example/*/web/out/
+
+*.buildlog
