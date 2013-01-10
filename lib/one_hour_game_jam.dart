@@ -100,7 +100,7 @@ class Grid extends Collection{
    *     Cell myCell = myGrid[5][10];
    */
   List<Cell> operator[](int x) {
-    print(_model[x]);
+    //print(_model[x]);
     return _model[x];
   }
 
@@ -130,7 +130,7 @@ class Grid extends Collection{
       }
     }
     
-    print("Foo: $out");
+    print("Baz: $out");
     return out;
   }
   
@@ -141,9 +141,12 @@ class Grid extends Collection{
   
   List<Cell> row(int r) {
     var out = [];
+    print('qux $r');
     for (int i = 0; i < width; i++) {
-      out.add(this[r][i]);
+      print("Blah: ${this[i][r]}");
+      out.add(this[i][r]);
     }
+    return out;
   }
 }
 
@@ -158,7 +161,8 @@ class GridRowIterator extends Iterator {
   
   /// Iterates row by row.
   List<Cell> next() {
-    print("Foo ${grid.row}");
+    print("Bar $grid");
+    print("Foo ${grid.row(_row)}");
     return grid.row(_row++);
   }
   

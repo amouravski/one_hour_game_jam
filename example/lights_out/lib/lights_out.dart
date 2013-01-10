@@ -7,6 +7,7 @@ import '../../../lib/one_hour_game_jam.dart';
 class LightCell extends Cell {
   bool lit;
   
+  // TODO(amouravski): Maybe add a named constructor this.lit(...)
   LightCell(x, y, this.lit)
       : super(x, y);
   

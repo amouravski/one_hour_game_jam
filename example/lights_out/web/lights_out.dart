@@ -24,14 +24,14 @@ main() {
  */    
 Grid _createLightGrid(List<String> grid) {
   var out = new Grid.empty();
-  for (int i = 0; i < grid.length; i++) {
-    var row = grid[i];
+  for (int y = 0; y < grid.length; y++) {
+    var row = grid[y];
     var gridRow = [];
-    for (int j = 0; j < row.length; j++) {
-      if (row[j] == '0') {
-        gridRow.add(new LightCell(i, j, false));
+    for (int x = 0; x < row.length; x++) {
+      if (row[x] == '0') {
+        gridRow.add(new LightCell(x, y, false));
       } else {
-        gridRow.add(new LightCell(i, j, true));
+        gridRow.add(new LightCell(x, y, true));
       }
     }
     out.addRow(gridRow);
