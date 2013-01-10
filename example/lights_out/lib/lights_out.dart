@@ -1,7 +1,7 @@
 library lights_out;
 
 //import 'package:one_hour_game_jam/model.dart';
-import '../../../lib/model.dart';
+import '../../../lib/one_hour_game_jam.dart';
 
 /// A cell that keeps track of whether it is lit or not.
 class LightCell extends Cell {

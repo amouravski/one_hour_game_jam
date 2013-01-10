@@ -1,4 +1,4 @@
-import '../../../lib/model.dart';
+import '../../../lib/one_hour_game_jam.dart';
 import '../lib/lights_out.dart';
 import 'dart:html';
 

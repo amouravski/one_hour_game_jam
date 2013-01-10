@@ -4,7 +4,7 @@ author: Andrei Mouravski <amouravski@gmail.com>
 description: A simple package that contains all the code I need to write a game in 1 hour.
 homepage: https://github.com/amouravski/one_hour_game_jam
 dependencies:
-  web_ui: any
+  web_ui: '>=0.2.11 <0.2.12'
 
 #dependencies:
 #  js: any

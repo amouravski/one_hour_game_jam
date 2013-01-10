@@ -1,4 +1,4 @@
-library model;
+library one_hour_game_jam;
 
 /// The grid that will display the game.
 class Grid extends Collection{

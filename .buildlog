@@ -1,0 +1,160 @@
+---
+build.dart --changed=example\lights_out\lib\lights_out.dart --changed=example\lights_out\web\lights_out.css --c...
+Unable to open file: C:/Users/andrei/Documents/GitHub/one_hour_game_jam/packages/html5lib/dom.dart'package:web_ui/src/compiler.dart': Error: line 8 pos 1: library handler failed
+import 'package:html5lib/dom.dart';
+^
+'package:web_ui/dwc.dart': Error: line 10 pos 1: library handler failed
+import 'src/compiler.dart';
+^
+'package:web_ui/component_build.dart': Error: line 25 pos 1: library handler failed
+import 'package:web_ui/dwc.dart' as dwc;
+^
+'file:///C:/Users/andrei/Documents/GitHub/one_hour_game_jam/build.dart': Error: line 1 pos 1: library handler failed
+import 'package:web_ui/component_build.dart';
+^
+build.dart finished [31 ms]
+
+---
+build.dart 
+Unable to open file: C:/Users/andrei/Documents/GitHub/one_hour_game_jam/packages/html5lib/dom.dart'package:web_ui/src/compiler.dart': Error: line 8 pos 1: library handler failed
+import 'package:html5lib/dom.dart';
+^
+'package:web_ui/dwc.dart': Error: line 10 pos 1: library handler failed
+import 'src/compiler.dart';
+^
+'package:web_ui/component_build.dart': Error: line 25 pos 1: library handler failed
+import 'package:web_ui/dwc.dart' as dwc;
+^
+'file:///C:/Users/andrei/Documents/GitHub/one_hour_game_jam/build.dart': Error: line 1 pos 1: library handler failed
+import 'package:web_ui/component_build.dart';
+^
+build.dart finished [31 ms]
+
+---
+build.dart --changed=pubspec.lock
+Unable to open file: C:/Users/andrei/Documents/GitHub/one_hour_game_jam/packages/html5lib/dom.dart'package:web_ui/src/compiler.dart': Error: line 8 pos 1: library handler failed
+import 'package:html5lib/dom.dart';
+^
+'package:web_ui/dwc.dart': Error: line 10 pos 1: library handler failed
+import 'src/compiler.dart';
+^
+'package:web_ui/component_build.dart': Error: line 25 pos 1: library handler failed
+import 'package:web_ui/dwc.dart' as dwc;
+^
+'file:///C:/Users/andrei/Documents/GitHub/one_hour_game_jam/build.dart': Error: line 1 pos 1: library handler failed
+import 'package:web_ui/component_build.dart';
+^
+build.dart finished [42 ms]
+
+---
+build.dart --changed=lib\one_hour_game_jam.dart --removed=lib\model.dart
+Unable to open file: C:/Users/andrei/Documents/GitHub/one_hour_game_jam/packages/html5lib/dom.dart'package:web_ui/src/compiler.dart': Error: line 8 pos 1: library handler failed
+import 'package:html5lib/dom.dart';
+^
+'package:web_ui/dwc.dart': Error: line 10 pos 1: library handler failed
+import 'src/compiler.dart';
+^
+'package:web_ui/component_build.dart': Error: line 25 pos 1: library handler failed
+import 'package:web_ui/dwc.dart' as dwc;
+^
+'file:///C:/Users/andrei/Documents/GitHub/one_hour_game_jam/build.dart': Error: line 1 pos 1: library handler failed
+import 'package:web_ui/component_build.dart';
+^
+build.dart finished [31 ms]
+
+---
+build.dart --changed=lib\one_hour_game_jam.dart
+Unable to open file: C:/Users/andrei/Documents/GitHub/one_hour_game_jam/packages/html5lib/dom.dart'package:web_ui/src/compiler.dart': Error: line 8 pos 1: library handler failed
+import 'package:html5lib/dom.dart';
+^
+'package:web_ui/dwc.dart': Error: line 10 pos 1: library handler failed
+import 'src/compiler.dart';
+^
+'package:web_ui/component_build.dart': Error: line 25 pos 1: library handler failed
+import 'package:web_ui/dwc.dart' as dwc;
+^
+'file:///C:/Users/andrei/Documents/GitHub/one_hour_game_jam/build.dart': Error: line 1 pos 1: library handler failed
+import 'package:web_ui/component_build.dart';
+^
+build.dart finished [35 ms]
+
+---
+build.dart --changed=example\lights_out\lib\lights_out.dart
+Unable to open file: C:/Users/andrei/Documents/GitHub/one_hour_game_jam/packages/html5lib/dom.dart'package:web_ui/src/compiler.dart': Error: line 8 pos 1: library handler failed
+import 'package:html5lib/dom.dart';
+^
+'package:web_ui/dwc.dart': Error: line 10 pos 1: library handler failed
+import 'src/compiler.dart';
+^
+'package:web_ui/component_build.dart': Error: line 25 pos 1: library handler failed
+import 'package:web_ui/dwc.dart' as dwc;
+^
+'file:///C:/Users/andrei/Documents/GitHub/one_hour_game_jam/build.dart': Error: line 1 pos 1: library handler failed
+import 'package:web_ui/component_build.dart';
+^
+build.dart finished [31 ms]
+
+---
+build.dart --changed=example\lights_out\web\lights_out.dart
+Unable to open file: C:/Users/andrei/Documents/GitHub/one_hour_game_jam/packages/html5lib/dom.dart'package:web_ui/src/compiler.dart': Error: line 8 pos 1: library handler failed
+import 'package:html5lib/dom.dart';
+^
+'package:web_ui/dwc.dart': Error: line 10 pos 1: library handler failed
+import 'src/compiler.dart';
+^
+'package:web_ui/component_build.dart': Error: line 25 pos 1: library handler failed
+import 'package:web_ui/dwc.dart' as dwc;
+^
+'file:///C:/Users/andrei/Documents/GitHub/one_hour_game_jam/build.dart': Error: line 1 pos 1: library handler failed
+import 'package:web_ui/component_build.dart';
+^
+build.dart finished [45 ms]
+
+---
+build.dart --changed=pubspec.lock
+Unable to open file: C:/Users/andrei/Documents/GitHub/one_hour_game_jam/packages/html5lib/dom.dart'package:web_ui/src/compiler.dart': Error: line 8 pos 1: library handler failed
+import 'package:html5lib/dom.dart';
+^
+'package:web_ui/dwc.dart': Error: line 10 pos 1: library handler failed
+import 'src/compiler.dart';
+^
+'package:web_ui/component_build.dart': Error: line 25 pos 1: library handler failed
+import 'package:web_ui/dwc.dart' as dwc;
+^
+'file:///C:/Users/andrei/Documents/GitHub/one_hour_game_jam/build.dart': Error: line 1 pos 1: library handler failed
+import 'package:web_ui/component_build.dart';
+^
+build.dart finished [40 ms]
+
+---
+build.dart --changed=pubspec.lock
+Unable to open file: C:/Users/andrei/Documents/GitHub/one_hour_game_jam/packages/html5lib/dom.dart'package:web_ui/src/compiler.dart': Error: line 8 pos 1: library handler failed
+import 'package:html5lib/dom.dart';
+^
+'package:web_ui/dwc.dart': Error: line 10 pos 1: library handler failed
+import 'src/compiler.dart';
+^
+'package:web_ui/component_build.dart': Error: line 25 pos 1: library handler failed
+import 'package:web_ui/dwc.dart' as dwc;
+^
+'file:///C:/Users/andrei/Documents/GitHub/one_hour_game_jam/build.dart': Error: line 1 pos 1: library handler failed
+import 'package:web_ui/component_build.dart';
+^
+build.dart finished [33 ms]
+
+---
+build.dart --changed=pubspec.yaml
+Unable to open file: C:/Users/andrei/Documents/GitHub/one_hour_game_jam/packages/html5lib/dom.dart'package:web_ui/src/compiler.dart': Error: line 8 pos 1: library handler failed
+import 'package:html5lib/dom.dart';
+^
+'package:web_ui/dwc.dart': Error: line 10 pos 1: library handler failed
+import 'src/compiler.dart';
+^
+'package:web_ui/component_build.dart': Error: line 25 pos 1: library handler failed
+import 'package:web_ui/dwc.dart' as dwc;
+^
+'file:///C:/Users/andrei/Documents/GitHub/one_hour_game_jam/build.dart': Error: line 1 pos 1: library handler failed
+import 'package:web_ui/component_build.dart';
+^
+build.dart finished [33 ms]
+
