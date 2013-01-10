@@ -3,6 +3,7 @@ import '../lib/lights_out.dart';
 import 'dart:html';
 
 Grid lightGrid;
+bool isWon = false;
 
 main() {
 
@@ -40,12 +41,24 @@ Grid _createLightGrid(List<String> grid) {
 }
 
 lightClick(LightCell cell, Grid grid) {
-  print('Clicked $cell');
   var neighbors = grid.neighborsAsList(cell);
   cell.flip();
   
   for (LightCell n in neighbors) {
-    print('Neighbor $n');
     n.flip();
   }
+  
+  isWon = checkForWin(grid);
+}
+
+checkForWin(Grid grid) {
+  for (List<LightCell> row in grid) {
+    for (LightCell cell in row) {
+      if (cell.lit) {
+        return false;
+      }
+    }
+  }
+  
+  return true;
 }

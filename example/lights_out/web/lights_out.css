@@ -1,4 +1,6 @@
 .cell {
+  display: inline-block;
+  width: 50px;
   background-color: #eee;
   text-align: center;
   -webkit-border-radius: 3px;
@@ -20,4 +22,8 @@
 
 .unlit {
   background-color: #000;
+}
+
+.container {
+  width: 500px;
 }

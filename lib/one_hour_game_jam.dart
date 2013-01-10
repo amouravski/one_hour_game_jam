@@ -100,13 +100,12 @@ class Grid extends Collection{
    *     Cell myCell = myGrid[5][10];
    */
   List<Cell> operator[](int x) {
-    //print(_model[x]);
     return _model[x];
   }
 
   /// Returns true if the coordinate pair is a valid location on the grid.
   bool _isCellValid(int x, int y) {
-    return x > 0 && y > 0 &&
+    return x >= 0 && y >= 0 &&
         x < width && y < height &&
         this[x][y].isValid();
   }
@@ -119,18 +118,17 @@ class Grid extends Collection{
    */
   Map<Point, Cell> neighbors(Cell cell, {bool diagonal: false}) {
     var out = new Map<Point, Cell>();
-    for (int x = cell.x - 1; x <= cell.x + 1; x++) {
-      for (int y = cell.y - 1; y <= cell.y + 1; y++) {
-        print('Test ($x, $y): ${_isCellValid(x,y)}');
-        if (diagonal == false && x == y) {
+    for (int dx = -1; dx <= 1; dx++) {
+      for (int dy = -1; dy <= 1; dy++) {
+        var x = cell.x + dx;
+        var y = cell.y + dy;
+        if (diagonal == false && (dx*dx) == (dy*dy)) {
           continue;
         } else if (_isCellValid(x, y)) {
           out.putIfAbsent(new Point(x, y), () {return this[x][y];});
         }
       }
     }
-    
-    print("Baz: $out");
     return out;
   }
   
@@ -141,9 +139,7 @@ class Grid extends Collection{
   
   List<Cell> row(int r) {
     var out = [];
-    print('qux $r');
     for (int i = 0; i < width; i++) {
-      print("Blah: ${this[i][r]}");
       out.add(this[i][r]);
     }
     return out;
@@ -161,11 +157,8 @@ class GridRowIterator extends Iterator {
   
   /// Iterates row by row.
   List<Cell> next() {
-    print("Bar $grid");
-    print("Foo ${grid.row(_row)}");
     return grid.row(_row++);
   }
-  
 }
 
 /// Iterates over elements in the grid row by row starting with `[0][0]`, then
