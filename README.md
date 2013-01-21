@@ -7,3 +7,5 @@ This will probably split off into something more complicated, but the initial go
     * It should also be easy to interact with any of the grid elements, such as clicking and dragging.
   * An easy way to model global state in the context of win/lose conditions
   * A turn based or real-time animation loop to make games run
+
+Code licensed under the [MIT License](http://creativecommons.org/licenses/MIT/), © [Andrei Mouravski](http://www.amouravski.com)
