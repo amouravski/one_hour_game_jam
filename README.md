@@ -8,4 +8,6 @@ This will probably split off into something more complicated, but the initial go
   * An easy way to model global state in the context of win/lose conditions
   * A turn based or real-time animation loop to make games run
 
+Find this [package on pub](http://pub.dartlang.org/packages/one_hour_game_jam).
+
 Code licensed under the [MIT License](http://creativecommons.org/licenses/MIT/), © [Andrei Mouravski](http://www.amouravski.com)
