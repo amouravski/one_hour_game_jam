@@ -1,3 +1,4 @@
+/// Library for my one hour game jams.
 library one_hour_game_jam;
 
 /// The grid that will display the game.
